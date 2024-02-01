@@ -1,0 +1,72 @@
+<div fxLayout="column" *ngIf="clients">
+  <section class="totalizer-wrap" fxLayout="row wrap" fxLayoutGap="20px">
+    <div
+      class="totalizer"
+      fxFlex
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
+      <label>Clientes</label>
+      <h1>45</h1>
+    </div>
+
+    <div
+      class="totalizer"
+      fxFlex
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
+      <label>Empreendimentos</label>
+      <h1>512</h1>
+    </div>
+
+    <div
+      class="totalizer"
+      fxFlex
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
+      <label>Unidades</label>
+      <h1>42412</h1>
+    </div>
+  </section>
+
+  <section class="search-wrap" fxLayout="column">
+    <img src="assets/logo.png" alt="" class="logo" />
+
+    <div class="search">
+      <mat-form-field>
+        <input matInput placeholder="Pesquise por nome..." type="text" />
+      </mat-form-field>
+    </div>
+  </section>
+
+  <section class="content-wrap" fxLayout="row wrap">
+    <div
+      fxFlex.gt-lg="20"
+      fxFlex.lg="25"
+      fxFlex.md="50"
+      fxFlex.lt-md="100"
+      class="card-wrap"
+      *ngFor="let client of clients"
+    >
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar><img [src]="client.image_src" /></div>
+
+          <mat-card-title>{{ client.name }}</mat-card-title>
+          <mat-card-subtitle>{{ client._id }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div fxLayout="row">
+            <div fxLayout="column" fxFlex>
+              <label for="">Empreendimentos</label>
+              <h3>{{ client.enterprises.length }}</h3>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+</div>

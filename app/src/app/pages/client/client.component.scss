@@ -1,0 +1,41 @@
+:host {
+  .totalizer {
+    padding: 30px;
+
+    h1 {
+      font-size: 14px;
+      margin: 8px;
+    }
+  }
+
+  .search-wrap {
+    padding: 10px;
+
+    .logo {
+      width: 120px;
+    }
+  }
+
+  .content-wrap {
+    padding: 10px;
+
+    .card-wrap {
+      padding: 5px;
+
+      .mat-card {
+        height: 130px;
+
+        .mat-card-avatar {
+          img {
+            width: 100%;
+            margin: 0;
+          }
+        }
+
+        h3 {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}

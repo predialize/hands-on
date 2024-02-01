@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  api:
+    build:
+      context: ./api
+      target: development
+    container_name: api
+    working_dir: /srv/api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api:/srv/api
+      - /srv/api/node_modules
+    restart: always
+  app:
+    build:
+      context: ./app
+      target: development
+    container_name: app
+    working_dir: /srv/app
+    ports:
+      - 4200:4200
+    volumes:
+      - ./app:/srv/app         
+      - /srv/app/node_modules
+    restart: always

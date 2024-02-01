@@ -1,0 +1,19 @@
+:host {
+  height: calc(100% - 64px);
+  display: block;
+  box-sizing: border-box;
+
+  .main-content {
+    height: 100%;
+    overflow: auto;
+  }
+
+  #github-logo {
+    width: 30px;
+  }
+
+  .mat-icon {
+    margin-right: 10px;
+    margin-left: 8px;
+  }
+}
